@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Bennylynch.github.io : Blog" />
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <title>BennyLynch.github.io</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+            <a id="forkme_banner" href="https://github.com/bennylynch/kaggle">Repo on GitHub</a>
+
+            <h1 id="project_title">Kaggle Gaggle</h1>
+            <h3 class="project_tagline">Solutions to kaggle competitions ...</h3>
+            <h4 class="project_tagline">... by a machine learning noob.</h4>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+        <section id="main_content" class="inner">
+            <h3><span class="octicon octicon-link"></span>Digit Recognizer</h3>
+            <p>
+                This competition involves producing an algorithm that can predict a digit from an array of integers (in the range 0 - 255), each of which represent a pixel in a 28 * 28 greyscale bitmap of a hand-written digit.
+            </p>
+            <p>
+                The data is provided in the form of CSV files. The training data has 785 columns, the first column representing the digit the row represents, the remaing 784 being the pixel data. The first row is a header :
+            </p>
+            <pre><code>
+            label, pixel0, pixel1, pixel2, pixel3, pixel4, ......... pixe783
+            1,     0,      125,    0,      0,      0,      ......... 0
+            7,     0,      0,      255,    0,      0,      ......... 0
+            0,     0,      0,      0,      0,      0,      ......... 0
+            9,     0,      0,      250,    0,      0,      ......... 0
+            ......
+            </code></pre>
+            <p>The test data is identical, with the exception that the first column is ommited (otherwise it would be too easy). The training data has 42000 rows, and the test data has 28000.</p>
+            <p>There are two established algorithms for this kind of problem, 'random forests', and <a href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm"><span>'k Nearest Neighbours'</span></a> aka kNN. I am going to tackle the latter, in the first instance. The kNN algorithm involves:</p>
+                <ul>
+                    <li>Calculate the 'distance' between the unknown, and each instance of the training data,</li>
+                    <li>take 'k' of these, with the lowest distance,</li>
+                    <li>find the majority classification among this set,</li>
+                    <li>... and the majority 'class' is the prediction returned by the algorithm.</li>
+                </ul>
+            <p>
+                The first thing we need to do, then, is to load the test data into something usable. 
+            </p>
+            <p>The first thing to do, then, is decide on a way to measure the distance between 2 instances of our pixel array data. 
+                The standard method would be to take the absolute difference between each corresponding pixel value, and sum all of these differences.
+                The maths, then, would be:
+            </p>
+                <pre><code>[x<sub>1</sub>, x<sub>2</sub>,x<sub>3</sub>.... x<sub>n</sub>] - [y<sub>1</sub>, y<sub>2</sub>,y<sub>3</sub>.... y<sub>n</sub>]</code></pre>
+            <table style="border-spacing:0px; border-width:0px; font-family:verdana;">
+                <tr style="border-spacing:0px; border-width:0px; font-family:verdana;">
+                    <td style="border-spacing:0px; border-width:0px;">&nbsp;</td>
+                    <td style="border-spacing:0px; border-width:0px;">_________________________________________</td>
+                </tr>
+                <tr style="border-spacing:0px; border-width:0px;">
+                    <td style="padding:0px;border-width:0px; font-size:x-large">
+                        = &radic;
+                    </td>
+                    <td style="padding:0px;border-width:0px;">
+                        <pre><code>(x<sub>1</sub> - y<sub>1</sub>)<sup>2</sup> + (x<sub>2</sub> - y<sub>2</sub>)<sup>2</sup> + (x<sub>3</sub> - y<sub>3</sub>)<sup>2</sup> .... + (x<sub>n</sub> - y<sub>n</sub>)<sup>2</sup></code></pre>
+                    </td>
+                </tr>
+            </table>
+            <p>
+
+            </p>
+            
+            
+            
+        </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+        <footer class="inner">
+            <p>View the  <a href="https://github.com/bennylynch/kaggle">Repo in GitHub</a></p>
+        </footer>
+    </div>
+
+
+
+</body>
+</html>
