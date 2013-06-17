@@ -17,7 +17,7 @@ small, strike, strong, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
+caption, tbody, tfoot, thead,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
@@ -34,7 +34,10 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
-
+table, tr, td {
+border-spacing:0px; 
+border-width:0px;
+}
 ol, ul {
   list-style: none;
 }
@@ -42,10 +45,10 @@ ol, ul {
 blockquote, q {
 }
 
-table {
+/*table {
   border-collapse: collapse;
   border-spacing: 0;
-}
+}*/
 
 a:focus {
   outline: none;
@@ -164,7 +167,7 @@ pre, code {
   background-color: #fff;
 
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  font-size: 14px;
+  font-size: 12px;
 
   border-radius: 2px;
   -moz-border-radius: 2px;
@@ -234,7 +237,7 @@ hr {
   background: url('../images/bg_hr.png') repeat-x center;
 }
 
-table {
+/*table {
   border: 1px solid #373737;
   margin-bottom: 20px;
   text-align: left;
@@ -250,7 +253,7 @@ th {
 td {
   padding: 10px;
   border: 1px solid #373737;
- }
+ }*/
 
 form {
   background: #f2f2f2;
@@ -272,7 +275,7 @@ Full-Width Styles
 
 .inner {
   position: relative;
-  max-width: 640px;
+  max-width: 1040px;
   padding: 20px 10px;
   margin: 0 auto;
 }
@@ -424,8 +427,7 @@ Small Device Styles
 
   code, pre {
     min-width: 320px;
-    max-width: 480px;
-    font-size: 11px;
+    max-width: 540px;
+    font-size: 8px;
   }
-
 }
